@@ -1,6 +1,6 @@
 from queue import Queue
 adj_list = {
-    "A":["B","D"],
+    "A":["B","C"],
     "B":["A","C"],
     "C":["B"],
     "D":["A","E","F"],
@@ -29,6 +29,7 @@ queue.put(s)
 while not queue.empty():
     u = queue.get()
     bfs_travel_op.append(u)
+    #visited[u] = True
     for v in adj_list[u]:
         if not visited[v]:
             visited[v] = True
