@@ -5,17 +5,10 @@ class Node:
 
 
 class Linkedlist():
-    count = 0
     def __init__(self):
         self.head = None
 
     def Insert_begin(self, data):
-
-        Linkedlist.count = Linkedlist.count +1
-        if (Linkedlist.count ==1 ):
-
-            data = ['a','b','c','d']
-            print("Inside insert ", type(data))
         node = Node(data, self.head)
         self.head = node
 
@@ -28,20 +21,9 @@ class Linkedlist():
 
     def Display(self):
         temp = self.head
-        Linkedlist.count = 0
-
         print("inside display")
         while (temp != None):
-            Linkedlist.count = Linkedlist.count + 1
-            if(Linkedlist.count == 3):
-                print("Inside if conditions")
-                for ch in temp.data:
-                    print(ch)
-#                print(temp.data[0])
- #               print(type(temp.data))
-                continue
-            else :
-                print(temp.data)
+            print(temp.data)
             temp = temp.nt
 
     def Insert_middle(self, data, position):
@@ -71,6 +53,6 @@ l1.Insert_begin(20)
 l1.Insert_begin(30)
 l1.Insert_end(5)
 l1.Insert_middle(25, 0)
-l1.Delete(2l)
+l1.Delete(0)
 l1.Display()
 

@@ -9,8 +9,7 @@ def count_substring(string, sub_string):
                 count = count + 1
 
                 if (sub_string == sub_string[::-1]):
-
-                    j = 1
+                    j = int(len(sub_string)/2)
                 else:
                     j = 0
         else:
@@ -26,3 +25,5 @@ if __name__ == '__main__':
 
     count = count_substring(string, sub_string)
     print(count)
+    s = "abc"
+    s.

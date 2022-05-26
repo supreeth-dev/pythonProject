@@ -1,25 +1,30 @@
 def merge_sort(unsorted):
-    if len(unsorted) <= 1:
+    if len(unsorted) <=1:
         return unsorted
-    middle = len(unsorted) // 2
-    l_list = unsorted[:middle]
-    r_list = unsorted[middle:]
-    l_list = merge_sort(l_list)
-    r_list = merge_sort(r_list)
-    return list(merge(l_list, r_list))
-def merge(l_half,r_half):
+    mid = len(unsorted)//2
+    print(mid)
+    left = unsorted[:mid]
+    right = unsorted[mid:]
+    print(left)
+    print(right)
+    left = merge_sort(left)
+    right = merge_sort(right)
+
+    return list(merge(left,right))
+
+def merge(left,right):
     s = []
-    while len(l_half) != 0 and len(r_half)!=0:
-        if l_half[0] < r_half[0]:
-            s.append(l_half[0])
-            l_half.remove(l_half[0])
+    while(len(left)!=0 and len(right)!=0):
+        if(left[0]<right[0]):
+            s.append(left[0])
+            left.remove(left[0])
         else:
-            s.append(r_half[0])
-            r_half.remove(r_half[0])
-    if len(l_half) == 0:
-       s = s + r_half
+            s.append(right[0])
+            right.remove(right[0])
+    if(len(left)!=0):
+        s = s + left
     else:
-       s = s + l_half
+        s = s + right
     return s
 unsorted = [34, 44, 22, 25, 18, 11]
 print(merge_sort(unsorted))
